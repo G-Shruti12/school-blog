@@ -1,0 +1,18 @@
+name: Auto Message on Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say thanks on push
+        run: |
+          echo "🎉 A file was created or updated on the main branch! Thank you for your contribution!"
